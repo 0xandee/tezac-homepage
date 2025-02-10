@@ -66,7 +66,7 @@ export default function RoadmapTimeline() {
             animationPlayState: isPaused ? "paused" : "running",
           }}
         >
-          {[...phases, ...phases].map((phase, index) => (
+          {isMobile ? ([...phases].map((phase, index) => (
             <motion.div
               key={index}
               className={`flex items-start ${isMobile ? "mb-8 flex-col w-full px-5" : "w-fit px-0 flex-row flex-shrink-0"}`}
@@ -96,7 +96,37 @@ export default function RoadmapTimeline() {
                 </motion.ul>
               </div>
             </motion.div>
-          ))}
+          ))):([...phases, ...phases].map((phase, index) => (
+            <motion.div
+              key={index}
+              className={`flex items-start ${isMobile ? "mb-8 flex-col w-full px-5" : "w-fit px-0 flex-row flex-shrink-0"}`}
+              variants={itemVariants}
+            >
+              <motion.div
+             style={{ backgroundColor: phase.title === phases[0].title ? "white" : "gray" }}
+                className={`${isMobile ? "w-full h-[15px]" : "w-[200px] h-[15px]"} rounded-none shadow-none`}
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                viewport={{ once: true }}
+              ></motion.div>
+              <div className={`${isMobile ? "pl-0" : "pl-4"} pt-0 w-fit`}>
+                <motion.h2
+                  className={`${isMobile ? "pt-5" : "pt-0"} text-xl font-bold p-0 leading-none text-white text-left`}
+                  variants={itemVariants}
+                >
+                  {phase.title}
+                </motion.h2>
+                <motion.ul className="text-left mt-2 p-0" variants={itemVariants}>
+                  {phase.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="text-zinc-400 text-xs text-left">
+                      . {item}
+                    </li>
+                  ))}
+                </motion.ul>
+              </div>
+            </motion.div>
+          )))}
         </div>
       </motion.div>
     </div>
