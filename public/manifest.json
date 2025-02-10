@@ -1,0 +1,16 @@
+{
+    "name": "Tezac NFT Marketplace",
+    "short_name": "Tezac",
+    "description": "Privacy-preserving NFT marketplace on Aztec Network",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#2c2d2f",
+    "theme_color": "#2c2d2f",
+    "icons": [
+      {
+        "src": "/tezac.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ]
+  }
