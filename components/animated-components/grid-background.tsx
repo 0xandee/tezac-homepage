@@ -1,17 +1,12 @@
 "use client"
 import { motion } from "framer-motion"
 
-export default function GridBackground() {
-  const columns = 12 
-  const rows = 6 
-
+export default function GridBackground({columns = 12, rows = 6}) {
   const gridVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.03,
-        delayChildren: 0.2,
       },
     },
   }
@@ -51,7 +46,7 @@ export default function GridBackground() {
     >
       {/* Grid lines */}
       <motion.div
-        className="absolute inset-0 grid grid-cols-[repeat(11,1fr)] grid-rows-[repeat(5,1fr)]"
+        className="absolute inset-0 grid grid-cols-[repeat(10,1fr)] grid-rows-[repeat(5,1fr)]"
         variants={gridVariants}
       >
         {[...Array(55)].map((_, index) => (

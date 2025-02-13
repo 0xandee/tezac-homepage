@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { TextRevealButtonProps } from "@/lib/types";
 
-
-
 export const TextRevealButton: React.FC<TextRevealButtonProps> = ({ text, revealText, className, ...props }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -39,14 +37,14 @@ export const TextRevealButton: React.FC<TextRevealButtonProps> = ({ text, reveal
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={cn(
-        "relative overflow-hidden px-4 py-2 rounded-md border text-white transition-colors duration-300",
+        "relative overflow-hidden px-4 py-2 rounded-md border text-black transition-colors duration-300",
         "min-w-[110px] flex justify-center items-center",
         className
       )}
       {...props}
     >
       <motion.div
-        className="absolute inset-0 bg-white"
+        className="absolute inset-0 bg-zinc-800"
         initial={false}
         animate={{
           clipPath: isHovered
@@ -60,7 +58,7 @@ export const TextRevealButton: React.FC<TextRevealButtonProps> = ({ text, reveal
         }}
       />
       <span className="relative z-10 flex items-center justify-center w-full">
-        <span className={cn("absolute", isHovered ? "text-black" : "text-white")}>
+        <span className={cn("absolute", isHovered ? "text-white" : "text-black")}>
           {isHovered ? revealText : text}
         </span>
       </span>

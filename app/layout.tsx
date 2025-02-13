@@ -1,27 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://tezac.xyz'),
   title: {
-    default: "Tezac | Private NFT Marketplace on Aztec Network",
+    default: "Tezac | Private Marketplace",
     template: "%s | Tezac NFT Marketplace"
   },
   description: "Privacy-preserving NFT marketplace enabling private ownership, hidden reserve prices, blind auctions, and cross-chain bridging powered by Aztec Network's zero-knowledge proofs.",
   keywords: [
     "NFT marketplace",
     "private NFT trading",
+    "privacy NFT",
     "Aztec Network",
     "zero-knowledge proofs",
     "blind auctions",
@@ -51,7 +46,7 @@ export const metadata: Metadata = {
     url: "https://tezac.xyz",
     siteName: "Tezac NFT Marketplace",
     title: "Tezac | Private NFT Trading Platform",
-    description: "First privacy-preserving NFT marketplace built on Aztec Network. Trade NFTs with complete privacy using zero-knowledge proofs.",
+    description: "Privacy-preserving NFT marketplace built on Aztec Network. Trade NFTs with complete privacy using zero-knowledge proofs.",
     images: [
       {
         url: "/tezac.png",
@@ -97,9 +92,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/tezac.png" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={geistMono.className}>
         {children}
       </body>
     </html>

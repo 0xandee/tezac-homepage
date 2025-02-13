@@ -1,16 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
 import { phases } from "@/lib/contants"
 
 export default function RoadmapTimeline() {
-  const [isPaused, setIsPaused] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 500)
+      setIsMobile(window.innerWidth < 1024)
     }
 
     handleResize()
@@ -21,115 +19,72 @@ export default function RoadmapTimeline() {
     }
   }, [])
 
- 
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12,
-      },
-    },
-  }
-
   return (
-    <div className="bg-zinc-800 pt-20 pb-40 font-mono overflow-hidden">
-      <motion.div
-        className="container text-center"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-        variants={containerVariants}
-      >
-        <motion.h1 className="text-white text-3xl md:text-5xl font-bold text-center mb-20" variants={itemVariants}>
-          2025_Roadmap
-        </motion.h1>
+    <div className="bg-zinc-800 pt-20 pb-60  overflow-hidden w-[100%]">
+      <div className="text-center">
+        <h1 className="text-white text-3xl md:text-5xl font-medium text-center mb-20">
+          Roadmap 2025
+        </h1>
 
         <div
-          className={`flex ${isMobile ? "flex-col justify-center w-full items-center" : "justify-start w-fit animate-scroll hover:pause"}`}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          style={{
-            animationPlayState: isPaused ? "paused" : "running",
-          }}
+          className={`flex ${isMobile ? "flex-col justify-center w-full items-center" : "flex-row justify-stretch"
+            }`}
         >
-          {isMobile ? ([...phases].map((phase, index) => (
-            <motion.div
-              key={index}
-              className={`flex items-start ${isMobile ? "mb-8 flex-col w-full px-5" : "w-fit px-0 flex-row flex-shrink-0"}`}
-              variants={itemVariants}
-            >
-              <motion.div
-             style={{ backgroundColor: phase.title === phases[0].title ? "white" : "gray" }}
-                className={`${isMobile ? "w-full h-[15px]" : "w-[200px] h-[15px]"} rounded-none shadow-none`}
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                viewport={{ once: true }}
-              ></motion.div>
-              <div className={`${isMobile ? "pl-0" : "pl-4"} pt-0 w-fit`}>
-                <motion.h2
-                  className={`${isMobile ? "pt-5" : "pt-0"} text-xl font-bold p-0 leading-none text-white text-left`}
-                  variants={itemVariants}
-                >
-                  {phase.title}
-                </motion.h2>
-                <motion.ul className="text-left mt-2 p-0" variants={itemVariants}>
-                  {phase.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="text-zinc-400 text-xs text-left">
-                      . {item}
-                    </li>
-                  ))}
-                </motion.ul>
+          {isMobile
+            ? phases.map((phase, index) => (
+              <div
+                key={index}
+                className="flex items-center flex-col w-full px-5"
+              >
+                {index % 2 === 0 && index !== phases.length - 1 ? <div
+                  style={{
+                    backgroundColor:
+                      index === 0 ? "white" : "gray",
+                  }}
+                  className="w-full h-[15px] rounded-none shadow-none"
+                /> : null}
+                {phase.title !== "" ? <div className="pl-0 pt-0 w-fit mb-16 mt-4">
+                  <h2 className="pt-5 text-2xl font-medium p-0 leading-none text-white text-center">
+                    {phase.title}
+                  </h2>
+                  <ul className="text-center mt-4 p-0">
+                    {phase.items.map((item, itemIndex) => (
+                      <li key={itemIndex} className="text-zinc-400 text-base mt-1">
+                        • {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div> : null}
               </div>
-            </motion.div>
-          ))):([...phases, ...phases].map((phase, index) => (
-            <motion.div
-              key={index}
-              className={`flex items-start ${isMobile ? "mb-8 flex-col w-full px-5" : "w-fit px-0 flex-row flex-shrink-0"}`}
-              variants={itemVariants}
-            >
-              <motion.div
-             style={{ backgroundColor: phase.title === phases[0].title ? "white" : "gray" }}
-                className={`${isMobile ? "w-full h-[15px]" : "w-[200px] h-[15px]"} rounded-none shadow-none`}
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                viewport={{ once: true }}
-              ></motion.div>
-              <div className={`${isMobile ? "pl-0" : "pl-4"} pt-0 w-fit`}>
-                <motion.h2
-                  className={`${isMobile ? "pt-5" : "pt-0"} text-xl font-bold p-0 leading-none text-white text-left`}
-                  variants={itemVariants}
-                >
-                  {phase.title}
-                </motion.h2>
-                <motion.ul className="text-left mt-2 p-0" variants={itemVariants}>
-                  {phase.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="text-zinc-400 text-xs text-left">
-                      . {item}
-                    </li>
-                  ))}
-                </motion.ul>
+            ))
+            : [...phases].map((phase, index) => (
+              <div
+                key={index}
+                className="flex items-start px-0 flex-row w-[100%]"
+              >
+                {index % 2 === 0 ?
+                  <div
+                    style={{
+                      backgroundColor:
+                        index === 0 ? "white" : "gray",
+                    }}
+                    className="w-full h-[15px] rounded-none shadow-none mt-2"
+                  /> : <div className="min-w-96 mx-[-2rem]">
+                    <h2 className="pt-0 text-3xl font-medium p-0 leading-none text-white text-center">
+                      {phase.title}
+                    </h2>
+                    <ul className="mt-4 p-0">
+                      {phase.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="text-zinc-400 text-base text-center mt-2 font-light">
+                          • {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>}
               </div>
-            </motion.div>
-          )))}
+            ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }
-
