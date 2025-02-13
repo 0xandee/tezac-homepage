@@ -16,6 +16,7 @@ function AnimatedDiamond({
   const yMultiplier = gridSize.y === 16.666 ? 6 : 6;
 
   useEffect(() => {
+    const animationSpeed = 5000 * Math.random();
     const interval = setInterval(() => {
       // Fade out at current position
       setVisible(false);
@@ -27,8 +28,8 @@ function AnimatedDiamond({
         };
         setPosition(newPosition);
         setVisible(true);
-      }, 1000); // Duration of fade-out
-    }, Math.random() * 10000);
+      }, 500); // Duration of fade-out
+    }, animationSpeed);
 
     return () => clearInterval(interval);
   }, [xMultiplier, yMultiplier]);

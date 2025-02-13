@@ -20,7 +20,7 @@ export default function RoadmapTimeline() {
   }, [])
 
   return (
-    <div className="bg-zinc-800 pt-20 pb-60  overflow-hidden w-[100%]">
+    <div className="bg-brand-bg pt-20 pb-60  overflow-hidden w-[100%]">
       <div className="text-center">
         <h1 className="text-white text-3xl md:text-5xl font-medium text-center mb-20">
           Roadmap 2025

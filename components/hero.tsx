@@ -26,7 +26,7 @@ export default function Hero() {
   const gridSize = isSm ? { x: 10, y: 16.666 } : { x: 33.15, y: 20 };
 
   return (
-    <div className="relative min-h-screen w-full bg-zinc-800">
+    <div className="relative min-h-screen w-full bg-brand-bg">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(46,46,48,1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(46,46,48,1)_1px,transparent_1px)] bg-[length:33.15%_20%] sm:bg-[length:10%_16.666%]" />
 
       <div className="absolute inset-0 overflow-hidden">

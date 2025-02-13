@@ -15,6 +15,7 @@ export default {
         scroll: 'scroll 20s linear infinite',
       },
       colors: {
+        'brand-bg': '#25262A',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -3,9 +3,9 @@ import { motion } from "framer-motion"
 
 const Description = () => {
   return (
-    <div className="bg-zinc-800 px-0 md:px-16">
+    <div className="bg-brand-bg px-0 md:px-16">
       <motion.div
-        className="bg-[#2c2d2f] py-10 md:py-40"
+        className="bg-[#2C2D2F] py-10 md:py-40"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.4 }}

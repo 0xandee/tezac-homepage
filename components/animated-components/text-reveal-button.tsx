@@ -44,7 +44,7 @@ export const TextRevealButton: React.FC<TextRevealButtonProps> = ({ text, reveal
       {...props}
     >
       <motion.div
-        className="absolute inset-0 bg-zinc-800"
+        className="absolute inset-0 bg-brand-bg"
         initial={false}
         animate={{
           clipPath: isHovered

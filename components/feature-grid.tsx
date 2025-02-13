@@ -28,7 +28,7 @@ export default function FeaturesGrid() {
   }
 
   return (
-    <div className="bg-zinc-800 py-4 sm:py-24 overflow-hidden">
+    <div className="bg-brand-bg py-4 sm:py-24 overflow-hidden">
       <motion.div
         className="w-full max-w-[100vw] mx-auto sm:my-14 px-0 sm:px-6 lg:container lg:px-8"
         initial="hidden"

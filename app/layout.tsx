@@ -9,7 +9,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://tezac.xyz'),
   title: {
-    default: "Tezac | Private Marketplace",
+    default: "Tezac - Private NFT Marketplace",
     template: "%s | Tezac NFT Marketplace"
   },
   description: "Privacy-preserving NFT marketplace enabling private ownership, hidden reserve prices, blind auctions, and cross-chain bridging powered by Aztec Network's zero-knowledge proofs.",
@@ -90,7 +90,6 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/tezac.png" />
       </head>
       <body className={geistMono.className}>
         {children}
