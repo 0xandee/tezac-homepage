@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { socials } from "@/lib/contants";
 import Image from "next/image"
 import { EncryptedText } from "./animated-components/encrypted-text-effect";
+import { cloneElement } from 'react';
 
 const Footer = () => {
   const [inView, setInView] = useState(false);
@@ -16,14 +17,11 @@ const Footer = () => {
           <Image src="/tezac-text-black.svg" alt="tezac logo" width={156} height={40} className="w-24 md:w-[128px]" />
           <div id="socials" className="flex items-center gap-6">
             {socials.map((social, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.2 }}
-              >
+              <motion.div key={index} whileHover={{ scale: 1.2 }}>
                 <Link href={social.url} id={social.name} target="_blank" className="text-brand-bg">
-                  <span className="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center">
-                    {social.icon}
-                  </span>
+                  {cloneElement(social.icon, {
+                    className: "w-6 h-6 sm:w-8 sm:h-8"
+                  })}
                 </Link>
               </motion.div>
             ))}
