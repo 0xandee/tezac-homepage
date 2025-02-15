@@ -4,17 +4,17 @@ export const phases = [
   { title: "", items: [] },
   {
     title: "Q1 Foundation",
-    items: ["Private NFT Mint & Transfer", "Private NFT Trading on Aztec"],
+    items: ["Privacy NFT Standards", "Privacy NFT Trading Protocol"],
   },
   { title: "", items: [] },
   {
     title: "Q2 Accelerate",
-    items: ["Cross-chain NFT L1/L2 Bridges"],
+    items: ["Cross-chain NFT L2 Bridges"],
   },
   { title: "", items: [] },
   {
     title: "Q3 Scaling",
-    items: ["Cross-chain NFT Trading"],
+    items: ["Cross-chain NFT Trading Protocol"],
   },
   { title: "", items: [] },
 ]
@@ -40,23 +40,23 @@ export const socials = [
 export const features = [
   {},
   {
-    title: "Private Ownership",
-    description: "Securely encrypt NFT ownership data so that user identities remain confidential",
+    title: "Ownership",
+    description: "Prove NFT ownership without revealing your wallet address",
   },
   {},
   {
-    title: "Private Auctions",
-    description: "Sellers set secret reserve prices while buyers submit sealed bids",
+    title: "Cross-Chain",
+    description: "Trade established L1/L2 collections privately via bridge system",
   },
   {},
   {
-    title: "Private Trading",
-    description: "All trades are executed using private notes, ensuring every single trade remains discreet",
+    title: "Trading",
+    description: "Orders are executed privately, ensuring every single trade remains discreet",
   },
   {},
   {
-    title: "Private Cross-Chain Trading",
-    description: "Private trade established L1 NFT collections through a bridge system",
+    title: "Zero Front-Running",
+    description: "Time-locked, encrypted orders protect against front-running",
   },
   {}
 ]

@@ -16,7 +16,7 @@ const Description = () => {
         viewport={{ once: true }}
       >
         <motion.p
-          className="text-center text-white 2xl:px-[30rem] sm:px-80 px-6 text-base/8 sm:text-2xl/9 font-light relative z-10"
+          className="text-center text-white px-10 2xl:px-[28rem] sm:px-24 text-base/8 sm:text-2xl/9 font-light relative z-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           onViewportEnter={() => setInView(true)}
