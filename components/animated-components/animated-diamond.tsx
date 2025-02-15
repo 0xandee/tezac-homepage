@@ -16,7 +16,9 @@ function AnimatedDiamond({
   const yMultiplier = gridSize.y === 16.666 ? 6 : 6;
 
   useEffect(() => {
-    const animationSpeed = 5000 * Math.random();
+    const minSpeed = 800; // minimum animation speed in ms
+    const maxSpeed = 1600; // maximum animation speed in ms
+    const animationSpeed = Math.random() * (maxSpeed - minSpeed) + minSpeed;
     const interval = setInterval(() => {
       // Fade out at current position
       setVisible(false);

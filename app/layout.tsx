@@ -24,7 +24,16 @@ export const metadata: Metadata = {
     "private cryptocurrency",
     "ZK rollup",
     "blockchain privacy",
-    "decentralized marketplace"
+    "decentralized marketplace",
+    "Aztec Bridge",
+    "NFT Bridge",
+    "L1 Bridge",
+    "L2 Bridge",
+    "Cross-Chain",
+    "Cross-Chain NFT",
+    "Private Trading",
+    "Private Auctions",
+    "Private Ownership",
   ],
   authors: [{ name: "andeebtceth" }],
   creator: "Tezac",
@@ -49,7 +58,7 @@ export const metadata: Metadata = {
     description: "Privacy-preserving NFT marketplace built on Aztec Network. Trade NFTs with complete privacy using zero-knowledge proofs.",
     images: [
       {
-        url: "/tezac.png",
+        url: "/tezac-with-bg.png",
         width: 1200,
         height: 630,
         alt: "Tezac NFT Marketplace Preview",
@@ -59,10 +68,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Tezac NFT Marketplace",
-    description: "Privacy-first NFT trading powered by Aztec Network",
-    site: "@andeebtceth",
+    description: "Privacy-first NFT trading powered by Aztec",
+    site: "tezac.xyz",
     creator: "@andeebtceth",
-    images: ["/tezac.png"],
+    images: ["/tezac-with-bg.png"],
   },
   alternates: {
     canonical: "https://tezac.xyz",

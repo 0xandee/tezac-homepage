@@ -1,21 +1,20 @@
-import { BsTwitterX } from "react-icons/bs";
-import { FaGithub, FaTelegram } from "react-icons/fa6";
+import { FaSquareXTwitter, FaGithub, FaTelegram } from "react-icons/fa6";
 
 export const phases = [
   { title: "", items: [] },
   {
-    title: "Q2 Foundation",
-    items: ["Private NFTs Mint & Transfer", "Private NFT Trading on Aztec"],
+    title: "Q1 Foundation",
+    items: ["Private NFT Mint & Transfer", "Private NFT Trading on Aztec"],
   },
   { title: "", items: [] },
   {
-    title: "Q3 Accelerate",
-    items: ["Launchpad for Creators", "Blind Auctions"],
+    title: "Q2 Accelerate",
+    items: ["Cross-Chain NFT L2 Bridges", "Cross-Chain NFT Proving"],
   },
   { title: "", items: [] },
   {
-    title: "Q4 Scaling",
-    items: ["Cross-Chain Trading on Ethereum", "Cross-Chain Trading on Solana"],
+    title: "Q3 Scaling",
+    items: ["Cross-Chain NFT Trading", "Cross-Chain L1 Bridges"],
   },
   { title: "", items: [] },
 ]
@@ -24,21 +23,22 @@ export const socials = [
   {
     name: "Twitter",
     url: "https://x.com/andeebtceth",
-    icon: <BsTwitterX size={30} />,
+    icon: <FaSquareXTwitter className="w-full h-full" />,
   },
   {
     name: "Telegram",
     url: "https://t.me/+WI9728WPBOE0N2M1",
-    icon: <FaTelegram size={30} />,
+    icon: <FaTelegram className="w-full h-full" />,
   },
   {
     name: "GitHub",
     url: "https://github.com/0xandee/tezac",
-    icon: <FaGithub size={30} />,
+    icon: <FaGithub className="w-full h-full" />,
   },
 ];
 
 export const features = [
+  {},
   {
     title: "Private Ownership",
     description: "Securely encrypt NFT ownership data so that user identities remain confidential",
@@ -55,20 +55,10 @@ export const features = [
   },
   {},
   {
-    title: "Cross-Chain Trading",
+    title: "Private Cross-Chain Trading",
     description: "Private trade established L1 NFT collections through a bridge system",
   },
-  {},
-  {
-    title: "Front-Running Resistance",
-    description: "Time-locked, encrypted orders protect against front-running",
-  },
-  {},
-  {
-    title: "Mint, Launch Collections",
-    description: "Creators can launch collections and allowing users to mint NFTs privately",
-  },
-  {},
+  {}
 ]
 
 export const gridIntersections = [

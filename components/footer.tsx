@@ -2,31 +2,38 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import { socials } from "@/lib/contants";
 import Image from "next/image"
+import { EncryptedText } from "./animated-components/encrypted-text-effect";
 
 const Footer = () => {
+  const [inView, setInView] = useState(false);
   return (
     <div className="bg-brand-bg px-0 md:px-20">
-      <div className="bg-white rounded-tl-none md:rounded-tl-[4rem] rounded-tr-none md:rounded-tr-[4rem] py-5 md:py-10">
-        <div className=" px-0 md:px-20 flex flex-col md:flex-row items-center justify-center md:justify-between">
-          <Image src="/tezac-text-black.svg" alt="tezac logo" width={156} height={40} />
-          <div id="socials" className="flex items-center gap-7 md:gap-5">
+      <div className="bg-white rounded-tl-[2rem] md:rounded-tl-[4rem] rounded-tr-[2rem] md:rounded-tr-[4rem] py-10 md:py-10">
+        <div className="px-10 md:px-20 flex flex-row items-center justify-between gap-10">
+          <Image src="/tezac-text-black.svg" alt="tezac logo" width={156} height={40} className="w-24 md:w-[128px]" />
+          <div id="socials" className="flex items-center gap-6">
             {socials.map((social, index) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.2 }}
-                transition={{ type: "spring", stiffness: 300 }}
               >
-                <Link href={social.url} id={social.name} target="_blank" className="text-brand-bg hover:text-zinc-600">
-                  {social.icon}
+                <Link href={social.url} id={social.name} target="_blank" className="text-brand-bg">
+                  <span className="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center">
+                    {social.icon}
+                  </span>
                 </Link>
               </motion.div>
             ))}
           </div>
         </div>
-        <p className=" text-center text-brand-bg text-xs my-10">©2025 Tezac. All rights reserved</p>
+        <motion.p className="text-center text-brand-bg text-xs mt-10" onViewportEnter={() => setInView(true)}>
+          {inView ? (
+            <EncryptedText text="©2025 Tezac. All rights reserved" interval={25} />
+          ) : null}
+        </motion.p>
       </div>
     </div>
   );
