@@ -35,7 +35,7 @@ export default function FeaturesGrid() {
     <div className="bg-brand-bg pt-20 sm:pt-40 overflow-hidden px-0 sm:px-16 ">
       <motion.h1 className="text-white text-3xl md:text-5xl font-medium text-center mb-20" onViewportEnter={() => setInViewTitle(true)}>
         {inViewTitle ? (
-          <EncryptedText text="Privacy at your Fingertips " />
+          <EncryptedText text="Privacy at your Fingertips" />
         ) : null}
       </motion.h1>
       <motion.div

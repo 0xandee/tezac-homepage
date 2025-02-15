@@ -9,12 +9,12 @@ export const phases = [
   { title: "", items: [] },
   {
     title: "Q2 Accelerate",
-    items: ["Cross-Chain NFT L2 Bridges", "Cross-Chain NFT Proving"],
+    items: ["Cross-chain NFT L2 Bridges"],
   },
   { title: "", items: [] },
   {
     title: "Q3 Scaling",
-    items: ["Cross-Chain NFT Trading", "Cross-Chain L1 Bridges"],
+    items: ["Cross-chain NFT Trading", "Cross-chain L1 Bridges"],
   },
   { title: "", items: [] },
 ]
