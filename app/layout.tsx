@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Tezac NFT Marketplace",
-    description: "Privacy-first NFT trading powered by Aztec",
+    description: "Privacy-first NFT marketplace powered by Aztec",
     site: "tezac.xyz",
     creator: "@andeebtceth",
     images: ["/tezac-with-bg.png"],
@@ -81,11 +81,10 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/tezac.png" },
-      { url: "/tezac.png", type: "image/png" },
+      { url: "/favicon.ico" },
     ],
     apple: [
-      { url: "/tezac.png" },
+      { url: "/favicon.ico" },
     ],
   },
   category: "Blockchain",

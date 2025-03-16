@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import { phases } from "@/lib/contants"
 import { motion } from "framer-motion";
-import { EncryptedText } from "./animated-components/encrypted-text-effect";
 
 export default function RoadmapTimeline() {
   const [isMobile, setIsMobile] = useState(false)
@@ -23,78 +22,159 @@ export default function RoadmapTimeline() {
     }
   }, [])
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10
+      }
+    }
+  };
+
+  const lineVariants = {
+    hidden: { width: "0%" },
+    visible: {
+      width: "100%",
+      transition: {
+        duration: 1.5,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <div className="bg-brand-bg pt-20 pb-20 sm:pb-40 overflow-hidden w-[100%]">
+    <div className="pt-20 pb-20 sm:pb-60 overflow-hidden w-[100%]">
       <div className="text-center">
-        <motion.h1 className="text-white text-3xl md:text-5xl font-medium text-center mb-20" onViewportEnter={() => setInViewTitle(true)}>
-          {inViewTitle ? (
-            <EncryptedText text="Roadmap 2025" interval={50} />
-          ) : null}
+        <motion.h1
+          className="text-primary-green text-3xl md:text-5xl font-medium text-center mb-24"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          onViewportEnter={() => setInViewTitle(true)}
+        >
+          {inViewTitle ? "Roadmap 2025" : null}
         </motion.h1>
-        <div className={`flex ${isMobile ? "flex-col justify-center w-full items-center" : "flex-row justify-stretch"}`}>
+
+        <motion.div
+          className={`flex ${isMobile ? "flex-col justify-center w-full items-center" : "flex-row justify-stretch"}`}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {isMobile
             ? phases.map((phase, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex items-center flex-col w-full px-5"
+                className="flex items-center flex-col w-full px-5 relative"
+                variants={itemVariants}
               >
-                {index % 2 === 0 && index !== phases.length - 1 ? <div
-                  style={{
-                    backgroundColor:
-                      index === 0 ? "white" : "gray",
-                  }}
-                  className="w-full h-[15px] rounded-none shadow-none"
-                /> : null}
+                {index % 2 === 0 && index !== phases.length - 1 ?
+                  <motion.div
+                    variants={lineVariants}
+                    style={{
+                      backgroundColor:
+                        index === 0 ? "#8cffba" : "#8cffba50",
+                    }}
+                    className="w-full h-[3px] rounded-full shadow-[0_0_10px_rgba(140,255,186,0.5)] relative"
+                  >
+                  </motion.div> : null}
+
                 {phase.title !== "" ?
-                  <div className="pl-0 pt-0 w-fit mb-16 mt-4" >
-                    <motion.h2 className="pt-5 text-2xl font-medium p-0 leading-none text-white text-center" onViewportEnter={() => setInViewTitle(true)}>
-                      {inViewTitle ? (
-                        <EncryptedText text={phase.title} interval={50} />
-                      ) : null}
+                  <motion.div
+                    className="pl-0 pt-0 w-fit mb-16 mt-4 group cursor-pointer transition-all duration-300 hover:scale-105"
+                    whileHover={{
+                      boxShadow: "0 0 25px rgba(140, 255, 186, 0.15)",
+                      backgroundColor: "rgba(20, 20, 20, 0.5)",
+                      borderRadius: "8px",
+                      padding: "16px"
+                    }}
+                  >
+                    <motion.h2
+                      className="pt-5 text-2xl font-medium p-0 leading-none text-white group-hover:text-primary-green transition-colors duration-300"
+                      onViewportEnter={() => setInViewTitle(true)}
+                    >
+                      {inViewTitle ? phase.title : null}
                     </motion.h2>
                     <motion.ul className="text-center mt-4 p-0" onViewportEnter={() => setInViewDescription(true)}>
                       {phase.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="text-zinc-400 text-base mt-1">
-                          • {inViewDescription ? (
-                            <EncryptedText text={item} interval={50} />
-                          ) : null}
-                        </li>
+                        <motion.li
+                          key={itemIndex}
+                          className="text-zinc-400 group-hover:text-zinc-200 transition-colors duration-300 text-base mt-1"
+                          initial={{ opacity: 0 }}
+                          animate={inViewDescription ? { opacity: 1 } : { opacity: 0 }}
+                          transition={{ delay: 0.1 * itemIndex }}
+                        >
+                          • {inViewDescription ? item : null}
+                        </motion.li>
                       ))}
                     </motion.ul>
-                  </div> : null}
-              </div>
+                  </motion.div> : null}
+              </motion.div>
             ))
             : [...phases].map((phase, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex items-start px-0 flex-row w-[100%]"
+                className="flex items-start px-0 flex-row w-[100%] relative"
+                variants={itemVariants}
               >
                 {index % 2 === 0 ?
-                  <div
+                  <motion.div
+                    variants={lineVariants}
                     style={{
                       backgroundColor:
-                        index === 0 ? "white" : "gray",
+                        index === 0 ? "#8cffba" : "#8cffba50",
                     }}
-                    className="w-full h-[15px] rounded-none shadow-none mt-2"
-                  /> : <div className="min-w-96 mx-[-2rem]">
-                    <motion.h2 className="pt-0 text-3xl font-medium p-0 leading-none text-white text-center" onViewportEnter={() => setInViewTitle(true)}>
-                      {inViewTitle ? (
-                        <EncryptedText text={phase.title} />
-                      ) : null}
+                    className="w-full h-[3px] rounded-full shadow-[0_0_10px_rgba(140,255,186,0.5)] mt-8 relative"
+                  >
+                  </motion.div> :
+                  <motion.div
+                    className="min-w-96 mx-[-2rem] group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+                    whileHover={{
+                      boxShadow: "0 0 25px rgba(140, 255, 186, 0.15)",
+                      backgroundColor: "rgba(20, 20, 20, 0.5)",
+                      borderRadius: "8px",
+                      padding: "16px"
+                    }}
+                  >
+                    <motion.h2
+                      className="pt-0 text-3xl font-medium p-0 leading-none text-white text-center group-hover:text-primary-green transition-colors duration-300"
+                      onViewportEnter={() => setInViewTitle(true)}
+                    >
+                      {inViewTitle ? phase.title : null}
                     </motion.h2>
                     <motion.ul className="mt-4 p-0" onViewportEnter={() => setInViewDescription(true)}>
                       {phase.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="text-zinc-400 text-base text-center mt-2 font-light">
-                          • {inViewDescription ? (
-                            <EncryptedText text={item} interval={20} />
-                          ) : null}
-                        </li>
+                        <motion.li
+                          key={itemIndex}
+                          className="text-zinc-400 text-base text-center mt-2 font-light group-hover:text-zinc-200 transition-colors duration-300"
+                          initial={{ opacity: 0 }}
+                          animate={inViewDescription ? { opacity: 1 } : { opacity: 0 }}
+                          transition={{ delay: 0.1 * itemIndex }}
+                        >
+                          • {inViewDescription ? item : null}
+                        </motion.li>
                       ))}
                     </motion.ul>
-                  </div>}
-              </div>
+                  </motion.div>}
+              </motion.div>
             ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   )

@@ -44,7 +44,6 @@ export default function GridBackground({ columns = 12, rows = 6 }) {
       whileInView="visible"
       viewport={{ once: true, amount: 0.1 }}
     >
-      {/* Grid lines */}
       <motion.div
         className="absolute inset-0 grid grid-cols-[repeat(11,1fr)] grid-rows-[repeat(5,1fr)]"
         variants={gridVariants}

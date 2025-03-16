@@ -9,7 +9,7 @@ export const phases = [
   { title: "", items: [] },
   {
     title: "Q2 Accelerate",
-    items: ["Cross-chain NFT L2 Bridges"],
+    items: ["First NFT Collection Launch","Cross-chain NFT L2 Bridges"],
   },
   { title: "", items: [] },
   {
@@ -38,27 +38,22 @@ export const socials = [
 ];
 
 export const features = [
-  {},
   {
     title: "Ownership",
     description: "Prove NFT ownership without revealing your wallet address",
   },
-  {},
   {
     title: "Cross-Chain",
     description: "Trade established L1/L2 collections privately via bridge system",
   },
-  {},
   {
     title: "Trading",
     description: "Orders are executed privately, ensuring every single trade remains discreet",
   },
-  {},
   {
     title: "Zero Front-Running",
     description: "Time-locked, encrypted orders protect against front-running",
   },
-  {}
 ]
 
 export const gridIntersections = [

@@ -11,7 +11,7 @@ import { cloneElement } from 'react';
 const Footer = () => {
   const [inView, setInView] = useState(false);
   return (
-    <div className="bg-brand-bg px-0 md:px-20">
+    <div className="px-0 md:px-20">
       <div className="bg-white rounded-tl-[2rem] md:rounded-tl-[4rem] rounded-tr-[2rem] md:rounded-tr-[4rem] py-10 md:py-10">
         <div className="px-10 md:px-20 flex flex-row items-center justify-between gap-10">
           <Image src="/tezac-text-black.svg" alt="tezac logo" width={156} height={40} className="w-24 md:w-[128px]" />
