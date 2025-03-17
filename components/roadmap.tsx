@@ -144,13 +144,7 @@ export default function RoadmapTimeline() {
                   >
                   </motion.div> :
                   <motion.div
-                    className="min-w-96 mx-[-2rem] group cursor-pointer transition-all duration-300 hover:-translate-y-1"
-                    whileHover={{
-                      boxShadow: "0 0 25px rgba(140, 255, 186, 0.15)",
-                      backgroundColor: "rgba(20, 20, 20, 0.5)",
-                      borderRadius: "8px",
-                      padding: "16px"
-                    }}
+                    className="min-w-96 mx-[-2rem] group cursor-pointer transition-all duration-300"
                   >
                     <motion.h2
                       className="pt-0 text-3xl font-medium p-0 leading-none text-white text-center group-hover:text-primary-green transition-colors duration-300"
