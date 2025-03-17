@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     "Private Auctions",
     "Private Ownership",
   ],
-  authors: [{ name: "andeebtceth" }],
-  creator: "Tezac",
-  publisher: "Tezac",
+  authors: [{ name: "Tezac.xyz" }],
+  creator: "Tezac.xyz",
+  publisher: "Tezac.xyz",
   robots: {
     index: true,
     follow: true,
