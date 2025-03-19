@@ -1,13 +1,13 @@
 import { FaSquareXTwitter, FaGithub, FaTelegram } from "react-icons/fa6";
 
 export const titleTexts = [
-  "Privately",
+  "privately",
 ];
 
 export const subtitleTexts = [
-  "Own NFTs",
-  "Trade NFTs",
-  "Mint NFTs",
+  "own NFTs",
+  "trade NFTs",
+  "mint NFTs",
 ];
 
 export const description = "Privacy NFT marketplace focused on securely trading NFTs while keeping your ownership and transactions private on any L2s"
