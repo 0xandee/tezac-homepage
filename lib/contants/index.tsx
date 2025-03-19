@@ -59,7 +59,7 @@ export const roadmap = [
 export const socials = [
   {
     name: "Twitter",
-    url: "https://x.com/andeebtceth",
+    url: "https://x.com/tezac_xyz",
     icon: <FaSquareXTwitter className="w-full h-full" />,
   },
   {
