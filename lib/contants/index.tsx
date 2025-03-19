@@ -5,12 +5,18 @@ export const titleTexts = [
 ];
 
 export const subtitleTexts = [
-  "own NFTs",
-  "trade NFTs",
-  "mint NFTs",
+  "own",
+  "trade",
+  "mint",
+  "bridge",
+  "transfer",
+  "collect",
+  "create",
+  "manage",
+  "govern",
 ];
 
-export const description = "Privacy NFT marketplace focused on securely trading NFTs while keeping your ownership and transactions private on any L2s"
+export const description = "Privacy NFT marketplace focused on keeping your ownership and transactions private accross L2s"
 
 export const features = [
   {
@@ -18,12 +24,12 @@ export const features = [
     description: "Maintain the privacy of your NFT holdings, ensuring that ownership details are not publicly accessible",
   },
   {
-    title: "Non-Custodial Ownership",
-    description: "Operates on a non-custodial model, allowing you to retain control over your assets without relying on third parties",
-  },
-  {
     title: "Private Trading",
     description: "Trade NFTs like a ghost, keeping buyer and seller identities, specific NFTs, and payment amounts private",
+  },
+  {
+    title: "Non-Custodial Ownership",
+    description: "Operates on a non-custodial model, allowing you to retain control over your assets without relying on third parties",
   },
   {
     title: "Cross-Chain Privacy",

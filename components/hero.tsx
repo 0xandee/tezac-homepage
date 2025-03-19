@@ -17,8 +17,9 @@ export default function Hero() {
         transition={{ duration: 0.2 }}
       >
         <div className="flex min-h-[80vh] flex-col items-center justify-center text-center">
-          <MorphingText className="text-primary-green" texts={titleTexts} />
-          <MorphingText className="text-white" texts={subtitleTexts} />
+          <MorphingText className="text-primary-green mb-[-6px] md:mb-2" texts={titleTexts} />
+          <MorphingText className="text-white mb-[-6px] md:mb-1" texts={subtitleTexts} />
+          <MorphingText className="text-primary-green" texts={["assets"]} />
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
