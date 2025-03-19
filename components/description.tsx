@@ -1,6 +1,7 @@
 "use client";
 import { NeonGradientCard } from "./magicui/neon-gradient-card";
 import { HyperText } from "./magicui/hyper-text";
+import { description } from "@/lib/contants"
 
 const Description = () => {
   return (
@@ -12,7 +13,7 @@ const Description = () => {
           speed={5}
           animateOnHover={false}
         >
-          Securely collect NFTs while keeping your ownership and transactions private on any L2s
+          {description}
         </HyperText>
       </NeonGradientCard>
     </div>

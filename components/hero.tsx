@@ -4,18 +4,8 @@ import { TextRevealButton } from "./animated-components/text-reveal-button"
 import Description from "./description"
 import { MorphingText } from "./magicui/morphing-text"
 import { generateRandomSymbols } from "./animated-components/encrypted-text-effect"
-
-const titleTexts = [
-  "Privately",
-];
-
-const subtitleTexts = [
-  "Mint NFTs",
-  "Transfer NFTs",
-  "Own NFTs",
-  "Trade NFTs",
-  "Bridge NFTs",
-];
+import { subtitleTexts } from "@/lib/contants"
+import { titleTexts } from "@/lib/contants"
 
 export default function Hero() {
   return (

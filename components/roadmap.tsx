@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { phases } from "@/lib/contants"
+import { roadmap } from "@/lib/contants"
 import { motion } from "framer-motion";
 
 export default function RoadmapTimeline() {
@@ -78,18 +78,18 @@ export default function RoadmapTimeline() {
           viewport={{ once: true, amount: 0.2 }}
         >
           {isMobile
-            ? phases.map((phase, index) => (
+            ? roadmap.map((phase, index) => (
               <motion.div
                 key={index}
                 className="flex items-center flex-col w-full px-5 relative"
                 variants={itemVariants}
               >
-                {index % 2 === 0 && index !== phases.length - 1 ?
+                {index % 2 === 0 && index !== roadmap.length - 1 ?
                   <motion.div
                     variants={lineVariants}
                     style={{
                       backgroundColor:
-                        index === 0 ? "#8cffba" : "#8cffba50",
+                        index === 0 ? "#a0e82c" : "#a0e82c50",
                     }}
                     className="w-full h-[3px] rounded-full shadow-[0_0_10px_rgba(140,255,186,0.5)] relative"
                   >
@@ -127,7 +127,7 @@ export default function RoadmapTimeline() {
                   </motion.div> : null}
               </motion.div>
             ))
-            : [...phases].map((phase, index) => (
+            : [...roadmap].map((phase, index) => (
               <motion.div
                 key={index}
                 className="flex items-start px-0 flex-row w-[100%] relative"
@@ -138,7 +138,7 @@ export default function RoadmapTimeline() {
                     variants={lineVariants}
                     style={{
                       backgroundColor:
-                        index === 0 ? "#8cffba" : "#8cffba50",
+                        index === 0 ? "#a0e82c" : "#a0e82c50",
                     }}
                     className="w-full h-[3px] rounded-full shadow-[0_0_10px_rgba(140,255,186,0.5)] mt-8 relative"
                   >

@@ -29,12 +29,12 @@ export default function FeaturesGrid() {
 
   const getFeatureIcon = (title: string) => {
     switch (title) {
-      case "Ownership":
+      case "Private Ownership":
         return <FaUserShield size={24} />;
-      case "Cross-Chain":
-        return <FaExchangeAlt size={24} />;
-      case "Trading":
+      case "Private Trading":
         return <FaBolt size={24} />;
+      case "Cross-Chain Privacy":
+        return <FaExchangeAlt size={24} />;
       default:
         return <FaLock size={24} />;
     }

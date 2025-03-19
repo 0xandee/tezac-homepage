@@ -1,6 +1,37 @@
 import { FaSquareXTwitter, FaGithub, FaTelegram } from "react-icons/fa6";
 
-export const phases = [
+export const titleTexts = [
+  "Privately",
+];
+
+export const subtitleTexts = [
+  "Own NFTs",
+  "Trade NFTs",
+  "Mint NFTs",
+];
+
+export const description = "Privacy NFT marketplace focused on securely trading NFTs while keeping your ownership and transactions private on any L2s"
+
+export const features = [
+  {
+    title: "Private Ownership",
+    description: "Maintain the privacy of your NFT holdings, ensuring that ownership details are not publicly accessible",
+  },
+  {
+    title: "Non-Custodial Ownership",
+    description: "Operates on a non-custodial model, allowing you to retain control over your assets without relying on third parties",
+  },
+  {
+    title: "Private Trading",
+    description: "Trade NFTs like a ghost, keeping buyer and seller identities, specific NFTs, and payment amounts private",
+  },
+  {
+    title: "Cross-Chain Privacy",
+    description: "Privately trade established collections from Aztec to any L2s via Tezac bridge system",
+  },
+]
+
+export const roadmap = [
   { title: "", items: [] },
   {
     title: "Q1 Foundation",
@@ -9,7 +40,7 @@ export const phases = [
   { title: "", items: [] },
   {
     title: "Q2 Accelerate",
-    items: ["First NFT Collection Launch","Cross-chain NFT L2 Bridges"],
+    items: ["First NFT Collection Launch", "Cross-chain NFT L2 Bridges"],
   },
   { title: "", items: [] },
   {
@@ -36,35 +67,3 @@ export const socials = [
     icon: <FaGithub className="w-full h-full" />,
   },
 ];
-
-export const features = [
-  {
-    title: "Ownership",
-    description: "Prove NFT ownership without revealing your wallet address",
-  },
-  {
-    title: "Cross-Chain",
-    description: "Trade established L1/L2 collections privately via bridge system",
-  },
-  {
-    title: "Trading",
-    description: "Orders are executed privately, ensuring every single trade remains discreet",
-  },
-  {
-    title: "Zero Front-Running",
-    description: "Time-locked, encrypted orders protect against front-running",
-  },
-]
-
-export const gridIntersections = [
-  { x: -1, y: -1 },
-  { x: -1, y: -1 },
-  { x: -1, y: -1 },
-  { x: -1, y: -1 },
-  { x: -1, y: -1 },
-  { x: -1, y: -1 },
-  { x: -1, y: -1 },
-  { x: -1, y: -1 },
-  { x: -1, y: -1 },
-  { x: -1, y: -1 },
-]
