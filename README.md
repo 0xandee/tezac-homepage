@@ -8,4 +8,4 @@
 
 We welcome pull requests, feature requests, and bug reports. 
 
-For questions, reach out in our community Telegram group: [https://t.me/+WI9728WPBOE0N2M1](https://t.me/+WI9728WPBOE0N2M1)
+For questions, reach out in our community Telegram group: [https://t.me/+yhkaIiIZ8-M0MTY1](https://t.me/+yhkaIiIZ8-M0MTY1)

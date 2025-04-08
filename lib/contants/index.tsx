@@ -64,7 +64,7 @@ export const socials = [
   },
   {
     name: "Telegram",
-    url: "https://t.me/+WI9728WPBOE0N2M1",
+    url: "https://t.me/+yhkaIiIZ8-M0MTY1",
     icon: <FaTelegram className="w-full h-full" />,
   },
   {
